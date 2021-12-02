@@ -9,7 +9,7 @@ The agent is a simple smart house agent that can be used to control the smart ho
 ```bash
 SSID=# SSID of the wifi network
 PASS=# Password of the wifi network
-NAME=# Name of the agent, should be unique and significant enough to identify the agent
+NAME=# Name of the agent, should be in the format of "room:type" for example "kitchen:light"
 ```
 <strong>NOTE:</strong> Make sure the wifi is compatible with the ESP8266. (Or any other wifi chip you use)
 
