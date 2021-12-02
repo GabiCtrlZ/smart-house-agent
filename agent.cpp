@@ -4,7 +4,7 @@
 
 const char* ssid = "SSID"; // should be changed before uploading code to agents
 const char* pass = "PASS"; // should be changed before uploading code to agents
-const char* name = "NAME"; // name of the agent, should be s
+const char* name = "NAME"; // name of the agent, should be in the format of "room:type" for example "kitchen:light"
 bool state = false;
 
 ESP8266WebServer server(80);
@@ -41,12 +41,12 @@ void setup(void){
     server.send(200, "text/html", String(state));
   });
   
-    server.on("/who-am-i", [](){
+  server.on("/who-am-i", [](){
     Serial.print("healthz requested");
     server.send(200, "text/html", String(name));
   });
 
-    server.on("/healthz", [](){
+  server.on("/healthz", [](){
     Serial.print("healthz requested");
     server.send(200, "text/html", "alive");
   });
